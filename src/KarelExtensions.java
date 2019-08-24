@@ -1,11 +1,12 @@
 import kareltherobot.*;
 import java.awt.Color;
 
-public class Experiment1 {
+public class KarelExtensions {
 
 	static int[][] pattern;
+	static UrRobot bob;
 	
-	public Experiment1(int xDimention, int yDimention) {
+	public KarelExtensions(int xDimention, int yDimention, int startX, int startY, ) {
 		pattern = new int[xDimention][yDimention];
 		for (int i = 0; i < pattern.length; i++) {
 			for (int j = 0; j < pattern[i].length; j++) {
@@ -14,7 +15,7 @@ public class Experiment1 {
 		}
 	}
 	
-	public Experiment1(int[][] diagram) {
+	public KarelExtensions(int[][] diagram) {
 		pattern = diagram;
 	}
 	

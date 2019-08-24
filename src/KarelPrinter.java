@@ -1,7 +1,7 @@
 import kareltherobot.*;
 import java.awt.Color;
 
-public class KarelAction {
+public class KarelPrinter {
 	static int[][] pattern = new int[][] {	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 											{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 											{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
