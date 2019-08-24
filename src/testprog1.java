@@ -3,7 +3,7 @@ import java.awt.Color;
 
 public class testprog1 implements Directions{
 	
-	public static void main(String [] args) {
+	public static void main(String[] args) {
 		UrRobot Harold = new UrRobot (2, 3, East, 50);
 		UrRobot Bob = new UrRobot (9, 3, East, 50);
 		Harold.move();

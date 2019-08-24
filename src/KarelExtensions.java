@@ -19,7 +19,7 @@ public class KarelExtensions {
 		pattern = diagram;
 	}
 	
-	public static void main(String [] args) {
+	public static void main(String[] args) {
 //		UrRobot bob = new UrRobot(1, 1, kareltherobot.Directions.East, 100);
 //		
 //		long timeStamp = System.currentTimeMillis();

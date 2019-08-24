@@ -15,7 +15,7 @@ public class KarelPrinter {
 											{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}	}; // 10 x 10
 	
 	
-	public static void main(String [] args) {
+	public static void main(String[] args) {
 		Experiment1 test = new Experiment1(pattern);
 		
 		Experiment1.drawPattern();
