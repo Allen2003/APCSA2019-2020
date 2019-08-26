@@ -18,7 +18,7 @@ public class KarelPrinter {
 	public static void main(String[] args) {
 		KarelExtensions test = new KarelExtensions(pattern);
 		
-		KarelExtensions.drawPattern();
+		test.drawPattern();
 	}
 	
 	
