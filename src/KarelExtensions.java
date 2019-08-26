@@ -6,7 +6,7 @@ public class KarelExtensions {
 	static int[][] pattern;
 	static UrRobot bob;
 	
-	public KarelExtensions(int xDimention, int yDimention, int startX, int startY, ) {
+	public KarelExtensions(int xDimention, int yDimention, int startX, int startY) {
 		pattern = new int[xDimention][yDimention];
 		for (int i = 0; i < pattern.length; i++) {
 			for (int j = 0; j < pattern[i].length; j++) {
