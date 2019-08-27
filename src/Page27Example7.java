@@ -12,38 +12,31 @@ public class Page27Example7 implements Directions{
 		// go outside to first beeper~
 		bob.turnLeft();
 		bob.turnLeft();
-		bob.move();
-		bob.move();
-		bob.move();
-		bob.move();
+		bob.moveX(4);
 		bob.turnRight();
-		bob.move();
-		bob.move();
-		bob.move();
+		bob.moveX(3);
 		bob.turnLeft();
 		bob.turnLeft();
 		
-		// put a beeper
-		bob.putBeeper();
-		
-		// go down the mountain
+		// move to pick up beepers
+		bob.pickBeeper();
 		bob.move();
-		bob.turnRight();
-		bob.move();
+		bob.pickBeeper();
 		bob.move();
 		bob.turnLeft();
 		bob.move();
+		bob.pickBeeper();
+		bob.move();
 		bob.turnRight();
 		bob.move();
-		bob.move();
 		bob.turnLeft();
-		
-		bob.turnOff();
+		bob.pickBeeper();
+		bob.moveX(2);
 	}
 	
 	static {
 		World.reset(); 
-		World.readWorld("Page26Example6.kwld"); 
+		World.readWorld("Page27Example7.kwld"); 
 		World.setBeeperColor(Color.magenta);
 		World.setStreetColor(Color.blue);
 		World.setNeutroniumColor(Color.green.darker());
