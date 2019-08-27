@@ -1,25 +1,37 @@
 import kareltherobot.*;
 import java.awt.Color;
 
-public class KarelExtensions {
+public class KarelExtensions extends UrRobot {
 
-	static int[][] pattern;
-	static UrRobot bob;
+//	int[][] pattern;
+//	UrRobot bob;
 	
-	public KarelExtensions(int xDimention, int yDimention, int startX, int startY) {
-		pattern = new int[xDimention][yDimention];
+	/* public KarelExtensions(int[][] diagram, int startY, int startX, kareltherobot.Directions.Direction direction, int initialBeepers) {
+		pattern = diagram;
+		
+		bob = new UrRobot(startY, startX, direction, initialBeepers);
+		
 		for (int i = 0; i < pattern.length; i++) {
 			for (int j = 0; j < pattern[i].length; j++) {
 				pattern[i][j] = 1;
 			}
 		}
+		
 	}
 	
 	public KarelExtensions(int[][] diagram) {
 		pattern = diagram;
+	} */
+	
+	public KarelExtensions(int street, int avenue, Direction direction, int beepers) {
+		super(street, avenue, direction, beepers);
+
+		long timeStamp = System.currentTimeMillis();
+		while (System.currentTimeMillis() - timeStamp < 1000) {}
 	}
 	
 	public static void main(String[] args) {
+
 //		UrRobot bob = new UrRobot(1, 1, kareltherobot.Directions.East, 100);
 //		
 //		long timeStamp = System.currentTimeMillis();
@@ -54,72 +66,77 @@ public class KarelExtensions {
 //		}
 	}
 	
-	public static void drawPattern() {
-		UrRobot bob = new UrRobot(pattern.length, 1, kareltherobot.Directions.East, 100);
-		
-		long timeStamp = System.currentTimeMillis();
+	public void drawPattern(int[][] pattern) {
+//		if (bob == null) {
+//			bob = new UrRobot(pattern.length, 1, kareltherobot.Directions.East, 100);
+//		}
 		int rowLength = 0;
-
-		while (System.currentTimeMillis() - timeStamp < 1200) {}
 		
 		for (int[] row: pattern) {
 			for (int space: row) {
 				for (int i = 0; i < space; i ++) {
-					bob.putBeeper();
+					putBeeper();
 				}
-				bob.move();
+				move();
 				rowLength++;
 			}
 			
 			// turn around at the end of a line
-			UTurn(bob, "right");
+			UTurn("right");
 			
 			// go to the beginning of the next line
 			for (int i = 0; i < rowLength; i++) {
-				bob.move();
+				move();
 			}
 			
 			rowLength = 0;
-			turnRight(bob);
-			turnRight(bob);
+			turnLeft();
+			turnLeft();
 		}
 		
 	}
 	
-	private static void putBeepersInRow(UrRobot robot, int rowLength) {
+	private void putBeepersInRow(int rowLength) {
 		// fill a row with beepers
-		robot.putBeeper();
+		putBeeper();
 		
 		for (int i = 0; i < rowLength - 1; i ++) {
-			robot.move();
-			robot.putBeeper();
+			move();
+			putBeeper();
 		}
 	}
 	
-	private static void UTurn(UrRobot robot, String direction) {
+	private void UTurn(String direction) {
 		// U turn at the end of a row
 		switch (direction) {
 		case "left":
-			robot.turnLeft();
-			robot.move();
-			robot.turnLeft();
+			turnLeft();
+			move();
+			turnLeft();
 			break;
 		case "right":
-			turnRight(robot);
-			robot.move();
-			turnRight(robot);
+			turnRight();
+			move();
+			turnRight();
 			break;
 		}
 	}
 	
-	public static void turnRight(UrRobot robot) {
-		// if 2 wrongs do not make a right, try 3
-		robot.turnLeft();
-		robot.turnLeft();
-		robot.turnLeft();
+	public void putBeepers(int numberOfBeepers) {
+		// put numberOfBeepers beepers
+		for (int i = 0; i < numberOfBeepers; i++) {
+			putBeeper();
+		}
 	}
 	
-	static {
+	public void turnRight() {
+		// if 2 wrongs do not make a right, try 3
+		turnLeft();
+		turnLeft();
+		turnLeft();
+	}
+	
+	/* static {
 		World.reset();
 		World.readWorld("emptyWorld11x11.kwld");
 		World.setBeeperColor(Color.YELLOW);
@@ -127,5 +144,5 @@ public class KarelExtensions {
 		World.setNeutroniumColor(Color.RED);
 		World.setDelay(1);
 		World.setVisible(true);
-	}
+	} */
 }
