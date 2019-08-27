@@ -4,7 +4,7 @@ import java.awt.Color;
 public class Page27Example7 implements Directions{
 	
 	public static void main(String[] args) {
-		KarelExtensions bob = new KarelExtensions(1, 2, kareltherobot.Directions.East, 1);
+		KarelExtensions bob = new KarelExtensions(5, 7, kareltherobot.Directions.East, 1);
 
 		long timeStamp = System.currentTimeMillis();
 		while (System.currentTimeMillis() - timeStamp < 1000) {}
