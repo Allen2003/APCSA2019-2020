@@ -32,6 +32,8 @@ public class Page27Example7 implements Directions{
 		bob.turnLeft();
 		bob.pickBeeper();
 		bob.moveX(2);
+		
+		bob.turnOff();
 	}
 	
 	static {

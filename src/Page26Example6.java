@@ -36,6 +36,7 @@ public class Page26Example6 implements Directions{
 		bob.move();
 		bob.move();
 		bob.turnLeft();
+		bob.move();
 		
 		bob.turnOff();
 	}

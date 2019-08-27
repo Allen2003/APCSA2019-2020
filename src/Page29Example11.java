@@ -26,6 +26,9 @@ public class Page29Example11 implements Directions{
 		ken.turnLeft();
 		ken.moveX(2);
 		ken.turnLeft();
+
+		ryu.turnOff();
+		ken.turnOff();
 	}
 	
 	static {

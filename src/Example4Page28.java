@@ -21,6 +21,7 @@ public class Example4Page28 implements Directions{
 		bob.move();
 		bob.move();
 		bob.turnLeft();
+		
 		bob.turnOff();
 	}
 

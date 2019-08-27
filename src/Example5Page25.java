@@ -26,6 +26,8 @@ public class Example5Page25 {
 		bob.turnRight();
 		bob.moveX(2);
 		bob.turnRight();
+
+		bob.turnOff();
 	}
 	
 	static {
