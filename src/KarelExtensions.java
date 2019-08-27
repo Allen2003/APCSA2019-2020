@@ -85,6 +85,29 @@ public class KarelExtensions extends UrRobot {
 		}
 	}
 	
+	public void commandShortcut(String[] commands) {
+		switch(commands) {
+			case "left":
+				turnLeft();
+				break;
+			case "move":
+				move();
+				break;
+			case "right":
+				turnRight();
+				break;
+			case "pick":
+				pickBeeper();
+				break;
+			case "put":
+				putBeeper();
+				break;
+			case "end":
+				turnOff();
+				break;
+		}
+	}
+	
 	/* static {
 		World.reset();
 		World.readWorld("emptyWorld11x11.kwld");
