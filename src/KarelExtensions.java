@@ -86,25 +86,58 @@ public class KarelExtensions extends UrRobot {
 	}
 	
 	public void commandShortcut(String[] commands) {
-		switch(commands) {
-			case "left":
-				turnLeft();
-				break;
-			case "move":
-				move();
-				break;
-			case "right":
-				turnRight();
-				break;
-			case "pick":
-				pickBeeper();
-				break;
-			case "put":
-				putBeeper();
-				break;
-			case "end":
-				turnOff();
-				break;
+		for (String item: commands) {
+			switch(item) {
+				case "left":
+					turnLeft();
+					break;
+				case "move":
+					move();
+					break;
+				case "right":
+					turnRight();
+					break;
+				case "pick":
+					pickBeeper();
+					break;
+				case "put":
+					putBeeper();
+					break;
+				case "end":
+					turnOff();
+					break;
+			}
+		}
+	}
+
+	public void commandShortcut2(int[] commands) {
+		// 0 = turnOff
+		// 1 = turnLeft
+		// 2 = move
+		// 3 = turnRight
+		// 4 = pickBeeper
+		// 5 = putBeeper
+		for (int item: commands) {
+			switch(item) {
+				case 1:
+					turnLeft();
+					break;
+				case 2:
+					move();
+					break;
+				case 3:
+					turnRight();
+					break;
+				case 4:
+					pickBeeper();
+					break;
+				case 5:
+					putBeeper();
+					break;
+				case 6:
+					turnOff();
+					break;
+			}
 		}
 	}
 	
