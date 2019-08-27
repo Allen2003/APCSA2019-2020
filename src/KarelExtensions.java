@@ -2,26 +2,6 @@ import kareltherobot.*;
 import java.awt.Color;
 
 public class KarelExtensions extends UrRobot {
-
-//	int[][] pattern;
-//	UrRobot bob;
-	
-	/* public KarelExtensions(int[][] diagram, int startY, int startX, kareltherobot.Directions.Direction direction, int initialBeepers) {
-		pattern = diagram;
-		
-		bob = new UrRobot(startY, startX, direction, initialBeepers);
-		
-		for (int i = 0; i < pattern.length; i++) {
-			for (int j = 0; j < pattern[i].length; j++) {
-				pattern[i][j] = 1;
-			}
-		}
-		
-	}
-	
-	public KarelExtensions(int[][] diagram) {
-		pattern = diagram;
-	} */
 	
 	public KarelExtensions(int street, int avenue, Direction direction, int beepers) {
 		super(street, avenue, direction, beepers);
@@ -30,46 +10,9 @@ public class KarelExtensions extends UrRobot {
 		while (System.currentTimeMillis() - timeStamp < 1000) {}
 	}
 	
-	public static void main(String[] args) {
-
-//		UrRobot bob = new UrRobot(1, 1, kareltherobot.Directions.East, 100);
-//		
-//		long timeStamp = System.currentTimeMillis();
-//		int rowLength = 0;
-//
-//		while (System.currentTimeMillis() - timeStamp < 1200) {}
-//
-//		bob.turnLeft();
-//		for (int i = 0; i < pattern.length; i ++) {
-//			bob.move();
-//		}
-//		turnRight(bob);
-//		
-//		for (int[] row: pattern) {
-//			for (int space: row) {
-//				for (int i = 0; i < space; i ++) {
-//					bob.putBeeper();
-//				}
-//				bob.move();
-//				rowLength++;
-//			}
-//			
-//			UTurn(bob, "right");
-//			
-//			for (int i = 0; i < rowLength; i++) {
-//				bob.move();
-//			}
-//			
-//			rowLength = 0;
-//			turnRight(bob);
-//			turnRight(bob);
-//		}
-	}
+	public static void main(String[] args) {}
 	
 	public void drawPattern(int[][] pattern) {
-//		if (bob == null) {
-//			bob = new UrRobot(pattern.length, 1, kareltherobot.Directions.East, 100);
-//		}
 		int rowLength = 0;
 		
 		for (int[] row: pattern) {
@@ -134,6 +77,10 @@ public class KarelExtensions extends UrRobot {
 		turnLeft();
 		turnLeft();
 		turnLeft();
+	}
+	
+	public void move(int distance) {
+		
 	}
 	
 	/* static {
