@@ -79,7 +79,7 @@ public class KarelExtensions extends UrRobot {
 		turnLeft();
 	}
 	
-	public void move(int distance) {
+	public void moveX(int distance) {
 		for (int i = 0; i < distance; i++) {
 			move();
 		}
