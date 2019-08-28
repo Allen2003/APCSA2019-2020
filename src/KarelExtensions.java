@@ -1,4 +1,5 @@
 import kareltherobot.*;
+import java.lang.reflect.*;
 import java.awt.Color;
 
 public class KarelExtensions extends UrRobot {
@@ -139,6 +140,22 @@ public class KarelExtensions extends UrRobot {
 					break;
 			}
 		}
+	}
+	
+	public void move2() {
+		move();
+		move();
+	}
+	
+//	public Method returnMove2() {
+//		return getClass().getMethod("move2", null);
+//	}
+	
+	public void repeat2Times(Method parameterMethod) throws Exception {
+
+		parameterMethod.invoke(this);
+		parameterMethod.invoke(this);
+		
 	}
 	
 	/* static {
