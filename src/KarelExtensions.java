@@ -1,4 +1,5 @@
 import kareltherobot.*;
+import java.lang.reflect.*;
 import java.awt.Color;
 
 public class KarelExtensions extends UrRobot {
@@ -83,6 +84,78 @@ public class KarelExtensions extends UrRobot {
 		for (int i = 0; i < distance; i++) {
 			move();
 		}
+	}
+	
+	public void commandShortcut(String[] commands) {
+		for (String item: commands) {
+			switch(item) {
+				case "left":
+					turnLeft();
+					break;
+				case "move":
+					move();
+					break;
+				case "right":
+					turnRight();
+					break;
+				case "pick":
+					pickBeeper();
+					break;
+				case "put":
+					putBeeper();
+					break;
+				case "end":
+					turnOff();
+					break;
+			}
+		}
+	}
+
+	public void commandShortcut2(int[] commands) {
+		// 0 = turnOff
+		// 1 = turnLeft
+		// 2 = move
+		// 3 = turnRight
+		// 4 = pickBeeper
+		// 5 = putBeeper
+		for (int item: commands) {
+			switch(item) {
+				case 1:
+					turnLeft();
+					break;
+				case 2:
+					move();
+					break;
+				case 3:
+					turnRight();
+					break;
+				case 4:
+					pickBeeper();
+					break;
+				case 5:
+					putBeeper();
+					break;
+				case 6:
+					turnOff();
+					break;
+			}
+		}
+	}
+	
+	public void move2() {
+		move();
+		move();
+	}
+	
+//	public Method returnMove2() {
+//		return getClass().getMethod("move2", null);
+//	}
+	
+	public void repeat2Times(Method parameterMethod) throws Exception {
+
+		parameterMethod.invoke(this);
+		parameterMethod.invoke(this);
+		
 	}
 	
 	/* static {
